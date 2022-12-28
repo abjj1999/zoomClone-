@@ -22,3 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const firebaseAuth = getAuth(app)
 export const firestoneDB = getFirestore(app)
+
+
+export const userRef = collection(firestoneDB, "users")

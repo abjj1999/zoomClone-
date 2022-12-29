@@ -6,6 +6,7 @@ import {useNavigate, useLocation, Link } from 'react-router-dom'
 import { useAppSelector } from '../app/hooks';
 import { firebaseAuth } from '../utils/FirebaseConfig';
 import { changeTheme } from '../app/slices/AuthSlice';
+import { getCreateMeetingBreadcrumb } from '../utils/breadCrumbs';
 const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,6 +29,12 @@ const Header = () => {
         dispatch(changeTheme({isDarkTheme: !isDarkTheme}))
 
     }
+    React.useEffect(() => {
+        const {pathname} = location;
+        if(pathname === '/create'){
+            setBreadcrumb(getCreateMeetingBreadcrumb(navigate))
+        }
+    }, [])
     const sections = [{
         items: [
             <Link to='/'>
@@ -104,6 +111,29 @@ const Header = () => {
                         </h2>
                     </EuiText>
                 </Link>
+            ]
+        },
+        {
+            items: [
+                <EuiFlexGroup justifyContent='center' alignItems='center' direction='row' style={{
+                    gap: '2vw'
+                }}>
+                    <EuiFlexItem grow={false} style={{flexBasis: "fit-content"}} >
+                        {
+                            isDarkTheme ? (
+                                <EuiButtonIcon onClick={changTheme}  iconType="sun" color="warning" display='fill' size='s' aria-label='invert-button' />
+    
+                            ): (
+    
+                                <EuiButtonIcon onClick={changTheme}  iconType="moon" color="ghost" display='fill' size='s' aria-label='invert-button' />
+                            )
+                        }
+    
+                    </EuiFlexItem>
+                    <EuiFlexItem grow={false} style={{flexBasis: "fit-content"}} >
+                        <EuiButtonIcon onClick={logout} iconType="lock" display='fill' size='s' aria-label='logout-button' />
+                    </EuiFlexItem>
+                </EuiFlexGroup>
             ]
         }
     ];

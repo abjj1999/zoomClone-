@@ -14,7 +14,7 @@ const UseAuth = () => {
         }
       else {
         dispatch(setUser({uid: user.uid, name: user.displayName, email: user.email}))
-        navigate('/')
+        // navigate('/')
       }
     })
     return () => unsubscribe();

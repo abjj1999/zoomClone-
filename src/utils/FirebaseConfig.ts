@@ -25,3 +25,4 @@ export const firestoneDB = getFirestore(app)
 
 
 export const userRef = collection(firestoneDB, "users")
+export const meetingRef = collection(firestoneDB, "meetings")

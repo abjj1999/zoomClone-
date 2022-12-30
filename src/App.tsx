@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import ThemeSelector from './components/ThemeSelector';
 import CreateMeeting from './pages/CreateMeeting';
 import OneonOneMeeting from './pages/OneonOneMeeting';
+import VideoConf from './pages/VideoConf';
 const App = () => {
 
   const dispatch = useAppDispatch()
@@ -60,6 +61,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path='/create' element={<CreateMeeting />} />
         <Route path='/create/oneonone' element={<OneonOneMeeting />} />
+        <Route path='/create/videoconf' element={<VideoConf />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="*" element={<Dashboard />} />
       </Routes>

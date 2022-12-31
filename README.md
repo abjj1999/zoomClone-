@@ -1,7 +1,7 @@
 # Zoom Clone
 
 ## Description
-    An application that allows users to create and join video calls. The application is built using React (framework), Firebase (database), ElasticUI (UI), Redux (app state managment), and Zego Cloud (video calling).
+    `An application that allows users to create and join video calls. The application is built using React (framework), Firebase (database), ElasticUI (UI), Redux (app     state managment), and Zego Cloud (video calling).`
 
 ## Installation
     1. Clone the repository

@@ -6,7 +6,7 @@ import {useNavigate, useLocation, Link } from 'react-router-dom'
 import { useAppSelector } from '../app/hooks';
 import { firebaseAuth } from '../utils/FirebaseConfig';
 import { changeTheme } from '../app/slices/AuthSlice';
-import { getCreateMeetingBreadcrumb, getOneonOneMeetingBreadcrumb, getVideoConfMeetingBreadcrumb, myMeetingsBreadcrumb } from '../utils/breadCrumbs';
+import { getCreateMeetingBreadcrumb, getOneonOneMeetingBreadcrumb, getVideoConfMeetingBreadcrumb, meetingBreadcrumb, myMeetingsBreadcrumb } from '../utils/breadCrumbs';
 const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,6 +41,9 @@ const Header = () => {
         }
         else if(pathname === '/my-meetings'){
             setBreadcrumb(myMeetingsBreadcrumb(navigate))
+        }
+        else if(pathname === '/meetings'){
+            setBreadcrumb(meetingBreadcrumb(navigate))
         }
     }, [])
     const sections = [{

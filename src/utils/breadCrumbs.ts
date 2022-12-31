@@ -23,3 +23,8 @@ export const myMeetingsBreadcrumb = (navigate: NavigateFunction) : Array<breadCr
     {text: "Dashboard", href: '#', onClick: () => navigate('/dashboard')},
     {text: "My Meetings"}
 ]
+
+export const meetingBreadcrumb = (navigate: NavigateFunction) : Array<breadCrumbsType> => [
+    {text: "Dashboard", href: '#', onClick: () => navigate('/dashboard')},
+    {text: "Meetings"}
+]

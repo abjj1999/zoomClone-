@@ -18,3 +18,8 @@ export const getVideoConfMeetingBreadcrumb = (navigate: NavigateFunction) : Arra
     {text: "Create Meeting", href: '#', onClick: () => navigate('/create')},
     {text: "Create Video Conference Meeting"}
 ]
+
+export const myMeetingsBreadcrumb = (navigate: NavigateFunction) : Array<breadCrumbsType> => [
+    {text: "Dashboard", href: '#', onClick: () => navigate('/dashboard')},
+    {text: "My Meetings"}
+]

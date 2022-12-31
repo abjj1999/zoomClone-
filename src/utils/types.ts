@@ -26,7 +26,7 @@ export interface ToastType{
     color: "success" | "primary" | "warning" | "danger"  | undefined
 }
 
-export type MeetingJoinType = "any-can-join" | "video-conference " | "1-on-1"
+export type MeetingJoinType = "any-can-join" | "video-conference" | "1-on-1"
 
 export interface MeetingType{
     docId?: string;
